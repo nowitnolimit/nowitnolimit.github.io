@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Warbloc House</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css?v=1.1">
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="assets/img/logo-warbloc.png" alt="Logo Warbloc House" class="logo-icon">
+                <div class="logo-text">Warbloc <span>House</span></div>
+            </a>
+
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="product.html">Product</a></li>
+                    <li><a href="location.html">Location</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-buttons" id="auth-buttons">
+                <a href="signin.html" class="btn btn-secondary">Sign In</a>
+                <a href="order.html" class="btn btn-primary">Order Online</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="page-wrapper">
+        <div class="container">
+            <div class="form-card">
+                <h1 class="form-title">Say <span>Hello</span></h1>
+                
+                <div id="contact-alert-success" class="alert alert-success">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <span>Message sent successfully! We will get back to you.</span>
+                </div>
+                
+                <div id="contact-alert-error" class="alert alert-error">
+                    <i class="fa-solid fa-circle-xmark"></i>
+                    <span id="contact-error-msg">All fields are required!</span>
+                </div>
+
+                <form id="contact-form">
+                    <div class="form-group">
+                        <label class="form-label" for="contact-name">Name</label>
+                        <input type="text" id="contact-name" class="form-input" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="contact-email">Email</label>
+                        <input type="email" id="contact-email" class="form-input" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="contact-subject">Subject</label>
+                        <input type="text" id="contact-subject" class="form-input" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="contact-message">Message</label>
+                        <textarea id="contact-message" class="form-input" rows="5" style="resize: vertical;" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-form" id="btn-submit-contact">
+                        <span>Send Message</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Warbloc House. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+    <script>
+        const form = document.getElementById('contact-form');
+        const alertSuccess = document.getElementById('contact-alert-success');
+        const alertError = document.getElementById('contact-alert-error');
+        const errorMsg = document.getElementById('contact-error-msg');
+        const btnSubmit = document.getElementById('btn-submit-contact');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            alertSuccess.style.display = 'none';
+            alertError.style.display = 'none';
+
+            const name = document.getElementById('contact-name').value.trim();
+            const email = document.getElementById('contact-email').value.trim();
+            const subject = document.getElementById('contact-subject').value.trim();
+            const message = document.getElementById('contact-message').value.trim();
+
+            if (!name || !email || !subject || !message) {
+                errorMsg.textContent = 'All fields are required!';
+                alertError.style.display = 'flex';
+                return;
+            }
+
+            btnSubmit.disabled = true;
+            btnSubmit.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> <span>Sending...</span>';
+
+            setTimeout(() => {
+                btnSubmit.disabled = false;
+                btnSubmit.innerHTML = '<span>Send Message</span>';
+                
+                alertSuccess.style.display = 'flex';
+                form.reset();
+                
+                window.scrollTo({
+                    top: alertSuccess.offsetTop - 120,
+                    behavior: 'smooth'
+                });
+                
+                setTimeout(() => {
+                    alertSuccess.style.display = 'none';
+                }, 5000);
+            }, 1500);
+        });
+    </script>
+</body>
+</html>

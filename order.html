@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Warbloc House</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css?v=1.1">
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="assets/img/logo-warbloc.png" alt="Logo Warbloc House" class="logo-icon">
+                <div class="logo-text">Warbloc <span>House</span></div>
+            </a>
+
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="product.html">Product</a></li>
+                    <li><a href="location.html">Location</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-buttons" id="auth-buttons">
+                <a href="signin.html" class="btn btn-secondary">Sign In</a>
+                <a href="order.html" class="btn btn-primary">Order Online</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="page-wrapper">
+        <div class="container">
+            <h1 class="section-title">Order <span>Checkout</span></h1>
+            
+            <div id="cart-empty-state" style="display: none; text-align: center; padding: 60px 20px;">
+                <i class="fa-solid fa-cart-shopping" style="font-size: 64px; color: #ccc; margin-bottom: 20px;"></i>
+                <h3 style="font-size: 24px; font-weight: 800; margin-bottom: 10px;">Your cart is empty!</h3>
+                <p style="margin-bottom: 30px; font-weight: 600; color: #666;">Add some delicious items from our menu first.</p>
+                <a href="product.html" class="btn btn-primary">Go to Menu</a>
+            </div>
+
+            <div class="cart-layout" id="cart-main-layout">
+                <div class="details-card" style="padding: 20px;">
+                    <h2 style="font-family: 'Chicalo', sans-serif; font-size: 22px; margin-bottom: 20px;">Your <span>Items</span></h2>
+                    <div class="table-container">
+                        <table class="wb-table">
+                            <thead>
+                                <tr>
+                                    <th>Item</th>
+                                    <th>Price</th>
+                                    <th>Quantity</th>
+                                    <th>Total</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody id="cart-table-body">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="checkout-card">
+                    <h2 style="font-family: 'Chicalo', sans-serif; font-size: 22px; margin-bottom: 20px;">Billing <span>Details</span></h2>
+                    
+                    <form id="checkout-form">
+                        <div class="form-group">
+                            <label class="form-label" for="checkout-name">Customer Name</label>
+                            <input type="text" id="checkout-name" class="form-input" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="checkout-phone">Phone Number</label>
+                            <input type="text" id="checkout-phone" class="form-input" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="checkout-table">Table Number / Delivery Address</label>
+                            <input type="text" id="checkout-table" class="form-input" placeholder="Table 5, or Jl. Sudirman No. 10..." required>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Payment Method</label>
+                            <div class="payment-grid">
+                                <div class="payment-opt active" data-method="cash">
+                                    <i class="fa-solid fa-money-bill-wave"></i>
+                                    Cash
+                                </div>
+                                <div class="payment-opt" data-method="qris">
+                                    <i class="fa-solid fa-qrcode"></i>
+                                    QRIS
+                                </div>
+                                <div class="payment-opt" data-method="card">
+                                    <i class="fa-solid fa-credit-card"></i>
+                                    Card
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="margin-top: 30px; margin-bottom: 25px; border-top: 1px solid #eee; padding-top: 20px;">
+                            <div class="summary-row">
+                                <span>Subtotal</span>
+                                <span id="summary-subtotal">Rp 0</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Tax (10%)</span>
+                                <span id="summary-tax">Rp 0</span>
+                            </div>
+                            <div class="summary-row total">
+                                <span>Total</span>
+                                <span id="summary-total">Rp 0</span>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn-form" id="btn-submit-order">
+                            <span>Place Order</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="success-overlay" id="checkout-success-overlay">
+        <div class="success-card">
+            <i class="fa-solid fa-circle-check success-icon"></i>
+            <h2 style="font-family: 'Chicalo', sans-serif; font-size: 28px; margin-bottom: 10px;">Order <span>Placed!</span></h2>
+            <p style="font-weight: 700; color: #555; margin-bottom: 25px;">Thank you. Your order #WB-<span id="success-order-id">0000</span> has been received and is being prepared.</p>
+            
+            <div class="details-card" style="margin-bottom: 30px; text-align: left; padding: 15px 20px; font-weight: 600; font-size: 14px;">
+                <div class="summary-row">
+                    <span>Dine-In/Delivery</span>
+                    <span id="success-dest">Table 5</span>
+                </div>
+                <div class="summary-row">
+                    <span>Payment Method</span>
+                    <span id="success-pay-method" style="text-transform: uppercase;">Cash</span>
+                </div>
+                <div class="summary-row" style="border-top: 1px solid #ddd; padding-top: 10px; margin-top: 10px; font-weight: 800; color: var(--wb-red);">
+                    <span>Total Bill</span>
+                    <span id="success-total-bill">Rp 0</span>
+                </div>
+            </div>
+
+            <a href="index.html" class="btn btn-primary" id="btn-success-close" style="width: 100%; border-radius: 30px;">Back to Home</a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Warbloc House. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const userName = localStorage.getItem('wb_user_name') || '';
+            const userPhone = localStorage.getItem('wb_user_phone') || '';
+            
+            if (userName) {
+                document.getElementById('checkout-name').value = userName;
+            }
+            if (userPhone) {
+                document.getElementById('checkout-phone').value = userPhone;
+            }
+
+            let payMethod = 'cash';
+            document.querySelectorAll('.payment-opt').forEach(opt => {
+                opt.addEventListener('click', () => {
+                    document.querySelectorAll('.payment-opt').forEach(o => o.classList.remove('active'));
+                    opt.classList.add('active');
+                    payMethod = opt.getAttribute('data-method');
+                });
+            });
+
+            function renderCart() {
+                const cartStr = localStorage.getItem('wb_cart');
+                let cart = [];
+                try {
+                    if (cartStr) cart = JSON.parse(cartStr);
+                } catch(e) {}
+
+                const emptyState = document.getElementById('cart-empty-state');
+                const mainLayout = document.getElementById('cart-main-layout');
+                const tbody = document.getElementById('cart-table-body');
+
+                if (cart.length === 0) {
+                    emptyState.style.display = 'block';
+                    mainLayout.style.display = 'none';
+                    return;
+                }
+
+                emptyState.style.display = 'none';
+                mainLayout.style.display = 'grid';
+                tbody.innerHTML = '';
+
+                let subtotal = 0;
+
+                cart.forEach((item, index) => {
+                    const rowTotal = item.price * item.quantity;
+                    subtotal += rowTotal;
+
+                    const tr = document.createElement('tr');
+                    tr.innerHTML = `
+                        <td>
+                            <div style="display: flex; align-items: center; gap: 15px;">
+                                <img src="${item.img || 'assets/img/cup wb.jpg'}" style="width: 50px; height: 50px; object-fit: cover; border: 2px solid var(--wb-dark); border-radius: 4px;">
+                                <span style="font-weight: 700;">${item.name}</span>
+                            </div>
+                        </td>
+                        <td>Rp ${item.price.toLocaleString('id-ID')}</td>
+                        <td>
+                            <div class="qty-selector" style="max-width: 80px;">
+                                <button class="qty-btn btn-minus" data-index="${index}">&minus;</button>
+                                <input type="text" class="qty-input" value="${item.quantity}" readonly>
+                                <button class="qty-btn btn-plus" data-index="${index}">&plus;</button>
+                            </div>
+                        </td>
+                        <td>Rp ${rowTotal.toLocaleString('id-ID')}</td>
+                        <td>
+                            <button class="btn-delete" data-index="${index}"><i class="fa-solid fa-trash-can"></i></button>
+                        </td>
+                    `;
+                    tbody.appendChild(tr);
+                });
+
+                const tax = Math.round(subtotal * 0.1);
+                const total = subtotal + tax;
+
+                document.getElementById('summary-subtotal').textContent = `Rp ${subtotal.toLocaleString('id-ID')}`;
+                document.getElementById('summary-tax').textContent = `Rp ${tax.toLocaleString('id-ID')}`;
+                document.getElementById('summary-total').textContent = `Rp ${total.toLocaleString('id-ID')}`;
+
+                tbody.querySelectorAll('.btn-minus').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        const idx = parseInt(btn.getAttribute('data-index'));
+                        if (cart[idx].quantity > 1) {
+                            cart[idx].quantity -= 1;
+                            localStorage.setItem('wb_cart', JSON.stringify(cart));
+                            renderCart();
+                            updateCartBadge();
+                        }
+                    });
+                });
+
+                tbody.querySelectorAll('.btn-plus').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        const idx = parseInt(btn.getAttribute('data-index'));
+                        cart[idx].quantity += 1;
+                        localStorage.setItem('wb_cart', JSON.stringify(cart));
+                        renderCart();
+                        updateCartBadge();
+                    });
+                });
+
+                tbody.querySelectorAll('.btn-delete').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        const idx = parseInt(btn.getAttribute('data-index'));
+                        cart.splice(idx, 1);
+                        localStorage.setItem('wb_cart', JSON.stringify(cart));
+                        renderCart();
+                        updateCartBadge();
+                    });
+                });
+            }
+
+            renderCart();
+
+            const cForm = document.getElementById('checkout-form');
+            const overlay = document.getElementById('checkout-success-overlay');
+            const btnSubmit = document.getElementById('btn-submit-order');
+
+            cForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                const name = document.getElementById('checkout-name').value.trim();
+                const phone = document.getElementById('checkout-phone').value.trim();
+                const table = document.getElementById('checkout-table').value.trim();
+
+                if (!name || !phone || !table) return;
+
+                btnSubmit.disabled = true;
+                btnSubmit.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> <span>Processing...</span>';
+
+                setTimeout(() => {
+                    const cartStr = localStorage.getItem('wb_cart');
+                    let cart = [];
+                    try {
+                        if (cartStr) cart = JSON.parse(cartStr);
+                    } catch(e) {}
+
+                    let subtotal = 0;
+                    cart.forEach(item => { subtotal += item.price * item.quantity; });
+                    const total = subtotal + Math.round(subtotal * 0.1);
+
+                    const orderId = Math.floor(1000 + Math.random() * 9000);
+                    document.getElementById('success-order-id').textContent = orderId;
+                    document.getElementById('success-dest').textContent = table;
+                    document.getElementById('success-pay-method').textContent = payMethod;
+                    document.getElementById('success-total-bill').textContent = `Rp ${total.toLocaleString('id-ID')}`;
+
+                    localStorage.removeItem('wb_cart');
+                    updateCartBadge();
+
+                    btnSubmit.disabled = false;
+                    btnSubmit.innerHTML = '<span>Place Order</span>';
+                    
+                    overlay.classList.add('active');
+                }, 1500);
+            });
+
+            document.getElementById('btn-success-close').addEventListener('click', (e) => {
+                overlay.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>

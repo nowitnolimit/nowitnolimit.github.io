@@ -6,30 +6,30 @@
     <title>Warbloc House</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=1.1">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css?v=1.1">
 </head>
 <body>
     <header>
         <div class="container header-container">
-            <a href="#" class="logo">
-                <img src="/logo-warbloc.png" alt="Logo Warbloc House" class="logo-icon">
-                <div class="logo-text">Warbloc <span>House</div>
+            <a href="index.html" class="logo">
+                <img src="assets/img/logo-warbloc.png" alt="Logo Warbloc House" class="logo-icon">
+                <div class="logo-text">Warbloc <span>House</span></div>
             </a>
 
             <nav>
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#product">Product</a></li>
-                    <li><a href="#">Location</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="product.html">Product</a></li>
+                    <li><a href="location.html">Location</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
 
-            <div class="nav-buttons">
-                <a href="#" class="btn btn-secondary">Sign In</a>
-                <a href="#" class="btn btn-primary">Order Online</a>
+            <div class="nav-buttons" id="auth-buttons">
+                <a href="signin.html" class="btn btn-secondary">Sign In</a>
+                <a href="order.html" class="btn btn-primary">Order Online</a>
             </div>
         </div>
     </header>
@@ -38,26 +38,34 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-subtitle"></div>
-            <h1 class="hero-title">Urban Taste <br><span>Fast Pace</span></h1>
-            <p class="hero-text">Tempat singgah untuk kolektif dan berbagai komunitas. Sikat heavy meal penuh bumbu, Nikmatin space-nya!.</p>
+                <h1 class="hero-title">Urban Taste <br><span>Fast Pace</span></h1>
+                <p class="hero-text">Tempat singgah untuk kolektif dan berbagai komunitas. Sikat heavy meal penuh bumbu, Nikmatin space-nya!.</p>
 
-            <div class="hero-buttons">
-                <a href="#" class="btn btn-primary">Explore Our Menu</a>
-                <a href="#" class="btn btn-secondary">Visit Our House</a>
+                <div class="hero-buttons">
+                    <a href="product.html" class="btn btn-primary">Explore Our Menu</a>
+                    <a href="location.html" class="btn btn-secondary">Visit Our House</a>
+                </div>
             </div>
-        </div>
-        <div class="hero-img">
-            <div class="slider-container">
-                <button class="slider-btn prev-btn">&#10094;</button>
-                <div class="slider-wrapper">
-                    <img src="foto/wb slide 1.jpg" class="slide" alt="Warbloc 1">
-                    <img src="foto/wb side 2.jpg" class="slide" alt="Warbloc 2">
-                    <img src="foto/wb slide 3.jpg" class="slide" alt="Warbloc 3">
-                <button class="slider-btn next-btn">&#10095;</button>
+            <div class="hero-img">
+                <div class="slider-container">
+                    <button class="slider-btn prev-btn">&#10094;</button>
+                    <div class="slider-wrapper">
+                        <img src="assets/img/wb slide 1.jpg" class="slide" alt="Warbloc 1">
+                        <img src="assets/img/wb side 2.jpg" class="slide" alt="Warbloc 2">
+                        <img src="assets/img/wb slide 3.jpg" class="slide" alt="Warbloc 3">
+                    </div>
+                    <button class="slider-btn next-btn">&#10095;</button>
+                </div>
             </div>
         </div>
     </section>
 
-    <script src="script.js"></script>
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Warbloc House. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
 </body>
 </html>

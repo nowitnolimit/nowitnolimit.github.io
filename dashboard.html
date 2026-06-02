@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Warbloc House</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css?v=1.1">
+</head>
+<body>
+    <script>
+        if (localStorage.getItem('wb_logged_in') !== 'true') {
+            window.location.href = 'index.html';
+        }
+    </script>
+
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="assets/img/logo-warbloc.png" alt="Logo Warbloc House" class="logo-icon">
+                <div class="logo-text">Warbloc <span>House</span></div>
+            </a>
+
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="product.html">Product</a></li>
+                    <li><a href="location.html">Location</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-buttons" id="auth-buttons">
+                <a href="signin.html" class="btn btn-secondary">Sign In</a>
+                <a href="order.html" class="btn btn-primary">Order Online</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="page-wrapper">
+        <div class="container">
+            <h1 class="section-title">User <span>Dashboard</span></h1>
+            
+            <div class="dashboard-layout">
+                <aside class="dashboard-sidebar">
+                    <ul class="sidebar-menu">
+                        <li>
+                            <a href="#" class="sidebar-link active" data-tab="tab-dashboard">
+                                <i class="fa-solid fa-house"></i> Dashboard
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="sidebar-link" data-tab="tab-profile">
+                                <i class="fa-solid fa-user-pen"></i> Edit Profile
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="sidebar-link" data-tab="tab-orders">
+                                <i class="fa-solid fa-receipt"></i> Order History
+                            </a>
+                        </li>
+                        <li style="margin-top: 20px; border-top: 1px solid #eee; padding-top: 20px;">
+                            <a href="#" class="sidebar-link" id="dashboard-logout" style="color: var(--wb-red);">
+                                <i class="fa-solid fa-right-from-bracket"></i> Logout
+                            </a>
+                        </li>
+                    </ul>
+                </aside>
+
+                <main class="dashboard-content">
+                    <div id="tab-dashboard" class="tab-content active">
+                        <h2 style="font-family: 'Chicalo', sans-serif; margin-bottom: 20px; font-size: 24px;">Welcome back, <span id="dash-username">Kolektif</span>!</h2>
+                        
+                        <div class="loyalty-card">
+                            <div class="loyalty-title">Warbloc Punch Card</div>
+                            <div class="loyalty-progress">Buy 10 coffees, get 1 FREE! Current progress: 7/10 cups.</div>
+                            
+                            <div class="punch-grid">
+                                <div class="punch-item punched"><i class="fa-solid fa-mug-hot"></i></div>
+                                <div class="punch-item punched"><i class="fa-solid fa-mug-hot"></i></div>
+                                <div class="punch-item punched"><i class="fa-solid fa-mug-hot"></i></div>
+                                <div class="punch-item punched"><i class="fa-solid fa-mug-hot"></i></div>
+                                <div class="punch-item punched"><i class="fa-solid fa-mug-hot"></i></div>
+                                <div class="punch-item punched"><i class="fa-solid fa-mug-hot"></i></div>
+                                <div class="punch-item punched"><i class="fa-solid fa-mug-hot"></i></div>
+                                <div class="punch-item"><i class="fa-solid fa-mug-hot"></i></div>
+                                <div class="punch-item"><i class="fa-solid fa-mug-hot"></i></div>
+                                <div class="punch-item free"><i class="fa-solid fa-gift"></i></div>
+                            </div>
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+                            <div class="details-card" style="padding: 20px; text-align: center;">
+                                <div style="font-size: 28px; font-weight: 900; color: var(--wb-green); margin-bottom: 5px;">750</div>
+                                <div style="font-size: 12px; font-weight: 700; text-transform: uppercase; color: #666;">Loyalty Points</div>
+                            </div>
+                            <div class="details-card" style="padding: 20px; text-align: center;">
+                                <div style="font-size: 28px; font-weight: 900; color: var(--wb-blue); margin-bottom: 5px;">Gold</div>
+                                <div style="font-size: 12px; font-weight: 700; text-transform: uppercase; color: #666;">Member Status</div>
+                            </div>
+                            <div class="details-card" style="padding: 20px; text-align: center;">
+                                <div style="font-size: 28px; font-weight: 900; color: var(--wb-purple); margin-bottom: 5px;">9</div>
+                                <div style="font-size: 12px; font-weight: 700; text-transform: uppercase; color: #666;">Total Orders</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="tab-profile" class="tab-content">
+                        <h2 style="font-family: 'Chicalo', sans-serif; margin-bottom: 20px; font-size: 24px;">Edit <span>Profile</span></h2>
+                        
+                        <div id="profile-alert-success" class="alert alert-success">
+                            <i class="fa-solid fa-circle-check"></i>
+                            <span>Profile updated successfully!</span>
+                        </div>
+
+                        <form id="profile-form">
+                            <div class="form-group">
+                                <label class="form-label" for="profile-name">Full Name</label>
+                                <input type="text" id="profile-name" class="form-input" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="profile-email">Email Address</label>
+                                <input type="email" id="profile-email" class="form-input" readonly style="opacity: 0.7; cursor: not-allowed;">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="profile-phone">Phone Number</label>
+                                <input type="text" id="profile-phone" class="form-input" value="+62 812-3456-7890">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="profile-fav">Favorite Drink</label>
+                                <select id="profile-fav" class="form-input" style="appearance: none;">
+                                    <option value="kopi-susu">Kopi Susu Warbloc</option>
+                                    <option value="americano">Ice Americano Pace</option>
+                                    <option value="matcha">Creamy Matcha Latte</option>
+                                    <option value="lemon-tea">Iced Lemon Tea</option>
+                                </select>
+                            </div>
+
+                            <button type="submit" class="btn-form" style="max-width: 200px;">
+                                <span>Save Changes</span>
+                            </button>
+                        </form>
+                    </div>
+
+                    <div id="tab-orders" class="tab-content">
+                        <h2 style="font-family: 'Chicalo', sans-serif; margin-bottom: 20px; font-size: 24px;">Order <span>History</span></h2>
+                        
+                        <div class="table-container">
+                            <table class="wb-table">
+                                <thead>
+                                    <tr>
+                                        <th>Order ID</th>
+                                        <th>Date</th>
+                                        <th>Items</th>
+                                        <th>Total</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>#WB-9821</td>
+                                        <td>2026-06-01</td>
+                                        <td>Kopi Susu Warbloc x2, French Fries Classic x1</td>
+                                        <td>Rp 51.000</td>
+                                        <td><span style="color: var(--wb-green); font-weight: 700;">Completed</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>#WB-9614</td>
+                                        <td>2026-05-29</td>
+                                        <td>Mie Goreng Heavy Meal x1, Iced Lemon Tea x1</td>
+                                        <td>Rp 32.000</td>
+                                        <td><span style="color: var(--wb-green); font-weight: 700;">Completed</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>#WB-9452</td>
+                                        <td>2026-05-24</td>
+                                        <td>Beef Blackpepper Ricebowl x1, Creamy Matcha Latte x1</td>
+                                        <td>Rp 50.000</td>
+                                        <td><span style="color: var(--wb-green); font-weight: 700;">Completed</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>#WB-9311</td>
+                                        <td>2026-05-18</td>
+                                        <td>Kopi Susu Warbloc x1, Cireng Bumbu Rujak x1</td>
+                                        <td>Rp 30.000</td>
+                                        <td><span style="color: var(--wb-green); font-weight: 700;">Completed</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Warbloc House. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const userName = localStorage.getItem('wb_user_name') || 'Kolektif';
+            const userEmail = localStorage.getItem('wb_user_email') || 'hello@warblochouse.com';
+            
+            document.getElementById('dash-username').textContent = userName;
+            document.getElementById('profile-name').value = userName;
+            document.getElementById('profile-email').value = userEmail;
+
+            document.querySelectorAll('.sidebar-link[data-tab]').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    
+                    document.querySelectorAll('.sidebar-link').forEach(l => l.classList.remove('active'));
+                    link.classList.add('active');
+                    
+                    const tabId = link.getAttribute('data-tab');
+                    document.querySelectorAll('.tab-content').forEach(tc => tc.classList.remove('active'));
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+
+            document.getElementById('dashboard-logout').addEventListener('click', (e) => {
+                e.preventDefault();
+                localStorage.removeItem('wb_logged_in');
+                localStorage.removeItem('wb_user_name');
+                window.location.href = 'index.html';
+            });
+
+            const pForm = document.getElementById('profile-form');
+            const pAlert = document.getElementById('profile-alert-success');
+            pForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                pAlert.style.display = 'none';
+
+                const newName = document.getElementById('profile-name').value.trim();
+                if (newName) {
+                    localStorage.setItem('wb_user_name', newName);
+                    document.getElementById('dash-username').textContent = newName;
+                    
+                    const userDisplayName = document.getElementById('user-display-name');
+                    if (userDisplayName) {
+                        userDisplayName.textContent = newName;
+                    }
+                    
+                    pAlert.style.display = 'flex';
+                    window.scrollTo({
+                        top: pAlert.offsetTop - 120,
+                        behavior: 'smooth'
+                    });
+                    
+                    setTimeout(() => {
+                        pAlert.style.display = 'none';
+                    }, 4000);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

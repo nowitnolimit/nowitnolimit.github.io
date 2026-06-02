@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Warbloc House</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css?v=1.1">
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="assets/img/logo-warbloc.png" alt="Logo Warbloc House" class="logo-icon">
+                <div class="logo-text">Warbloc <span>House</span></div>
+            </a>
+
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="product.html">Product</a></li>
+                    <li><a href="location.html">Location</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-buttons" id="auth-buttons">
+                <a href="signin.html" class="btn btn-secondary">Sign In</a>
+                <a href="order.html" class="btn btn-primary">Order Online</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="page-wrapper">
+        <div class="container">
+            <h1 class="section-title">Menu <span>Kolektif</span></h1>
+            
+            <div id="product-alert" class="alert alert-success">
+                <i class="fa-solid fa-circle-check"></i>
+                <span id="product-alert-msg">Item added to cart!</span>
+            </div>
+
+            <div class="category-tabs">
+                <button class="tab-btn active" data-category="all">All Items</button>
+                <button class="tab-btn" data-category="drinks">Coffee & Drinks</button>
+                <button class="tab-btn" data-category="meals">Heavy Meals</button>
+                <button class="tab-btn" data-category="snacks">Snacks</button>
+            </div>
+
+            <div class="product-grid">
+                <div class="product-card" data-category="drinks">
+                    <div class="product-img-container">
+                        <img src="assets/img/cup wb.jpg" class="product-img" alt="Kopi Susu Warbloc">
+                        <span class="product-badge">Best Seller</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Kopi Susu Warbloc</h3>
+                        <p class="product-desc">Iced milk coffee sweetened with our special brown sugar recipe. Bold and sweet.</p>
+                        <div class="product-price-action">
+                            <span class="product-price">Rp 18.000</span>
+                            <div class="qty-selector">
+                                <button class="qty-btn btn-minus">&minus;</button>
+                                <input type="text" class="qty-input" value="1" readonly>
+                                <button class="qty-btn btn-plus">&plus;</button>
+                            </div>
+                            <button class="btn-add-cart" data-name="Kopi Susu Warbloc" data-price="18000" data-img="assets/img/cup wb.jpg">Add</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="drinks">
+                    <div class="product-img-container">
+                        <img src="assets/img/cup wb.jpg" class="product-img" alt="Ice Americano Pace">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Ice Americano Pace</h3>
+                        <p class="product-desc">Freshly pulled double shot of espresso over water and ice. For the ultimate pace.</p>
+                        <div class="product-price-action">
+                            <span class="product-price">Rp 15.000</span>
+                            <div class="qty-selector">
+                                <button class="qty-btn btn-minus">&minus;</button>
+                                <input type="text" class="qty-input" value="1" readonly>
+                                <button class="qty-btn btn-plus">&plus;</button>
+                            </div>
+                            <button class="btn-add-cart" data-name="Ice Americano Pace" data-price="15000" data-img="assets/img/cup wb.jpg">Add</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="drinks">
+                    <div class="product-img-container">
+                        <img src="assets/img/cup wb.jpg" class="product-img" alt="Creamy Matcha Latte">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Creamy Matcha Latte</h3>
+                        <p class="product-desc">Premium Japanese green tea matcha whisked with fresh creamy steamed milk.</p>
+                        <div class="product-price-action">
+                            <span class="product-price">Rp 22.000</span>
+                            <div class="qty-selector">
+                                <button class="qty-btn btn-minus">&minus;</button>
+                                <input type="text" class="qty-input" value="1" readonly>
+                                <button class="qty-btn btn-plus">&plus;</button>
+                            </div>
+                            <button class="btn-add-cart" data-name="Creamy Matcha Latte" data-price="22000" data-img="assets/img/cup wb.jpg">Add</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="drinks">
+                    <div class="product-img-container">
+                        <img src="assets/img/cup wb.jpg" class="product-img" alt="Iced Lemon Tea">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Iced Lemon Tea</h3>
+                        <p class="product-desc">Refreshing sweetened black tea infused with natural fresh lemon juice juice.</p>
+                        <div class="product-price-action">
+                            <span class="product-price">Rp 12.000</span>
+                            <div class="qty-selector">
+                                <button class="qty-btn btn-minus">&minus;</button>
+                                <input type="text" class="qty-input" value="1" readonly>
+                                <button class="qty-btn btn-plus">&plus;</button>
+                            </div>
+                            <button class="btn-add-cart" data-name="Iced Lemon Tea" data-price="12000" data-img="assets/img/cup wb.jpg">Add</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="meals">
+                    <div class="product-img-container">
+                        <img src="assets/img/wb slide 1.jpg" class="product-img" alt="Nasi Goreng Gila">
+                        <span class="product-badge">Heavy Meal</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Nasi Goreng Gila</h3>
+                        <p class="product-desc">Indonesian wok-fried rice topped with a spicy sausage, meatball, and egg scramble.</p>
+                        <div class="product-price-action">
+                            <span class="product-price">Rp 25.000</span>
+                            <div class="qty-selector">
+                                <button class="qty-btn btn-minus">&minus;</button>
+                                <input type="text" class="qty-input" value="1" readonly>
+                                <button class="qty-btn btn-plus">&plus;</button>
+                            </div>
+                            <button class="btn-add-cart" data-name="Nasi Goreng Gila" data-price="25000" data-img="assets/img/wb slide 1.jpg">Add</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="meals">
+                    <div class="product-img-container">
+                        <img src="assets/img/wb side 2.jpg" class="product-img" alt="Mie Goreng Heavy Meal">
+                        <span class="product-badge">Heavy Meal</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Mie Goreng Heavy Meal</h3>
+                        <p class="product-desc">Thick yellow stir-fried noodles cooked in rich sweet soy sauce and heavily seasoned.</p>
+                        <div class="product-price-action">
+                            <span class="product-price">Rp 20.000</span>
+                            <div class="qty-selector">
+                                <button class="qty-btn btn-minus">&minus;</button>
+                                <input type="text" class="qty-input" value="1" readonly>
+                                <button class="qty-btn btn-plus">&plus;</button>
+                            </div>
+                            <button class="btn-add-cart" data-name="Mie Goreng Heavy Meal" data-price="20000" data-img="assets/img/wb side 2.jpg">Add</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="meals">
+                    <div class="product-img-container">
+                        <img src="assets/img/wb slide 3.jpg" class="product-img" alt="Beef Blackpepper Ricebowl">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Beef Blackpepper Ricebowl</h3>
+                        <p class="product-desc">Tender beef slices sauteed in peppery black sauce served over warm jasmine rice.</p>
+                        <div class="product-price-action">
+                            <span class="product-price">Rp 28.000</span>
+                            <div class="qty-selector">
+                                <button class="qty-btn btn-minus">&minus;</button>
+                                <input type="text" class="qty-input" value="1" readonly>
+                                <button class="qty-btn btn-plus">&plus;</button>
+                            </div>
+                            <button class="btn-add-cart" data-name="Beef Blackpepper Ricebowl" data-price="28000" data-img="assets/img/wb slide 3.jpg">Add</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="meals">
+                    <div class="product-img-container">
+                        <img src="assets/img/wb slide 1.jpg" class="product-img" alt="Ayam Geprek Sambal Bawang">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Ayam Geprek Sambal Bawang</h3>
+                        <p class="product-desc">Crispy golden chicken breast smashed with aromatic fresh garlic and chili paste.</p>
+                        <div class="product-price-action">
+                            <span class="product-price">Rp 22.000</span>
+                            <div class="qty-selector">
+                                <button class="qty-btn btn-minus">&minus;</button>
+                                <input type="text" class="qty-input" value="1" readonly>
+                                <button class="qty-btn btn-plus">&plus;</button>
+                            </div>
+                            <button class="btn-add-cart" data-name="Ayam Geprek Sambal Bawang" data-price="22000" data-img="assets/img/wb slide 1.jpg">Add</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="snacks">
+                    <div class="product-img-container">
+                        <img src="assets/img/wb side 2.jpg" class="product-img" alt="French Fries Classic">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">French Fries Classic</h3>
+                        <p class="product-desc">Crispy golden potato fries seasoned with sea salt and served with dynamic dips.</p>
+                        <div class="product-price-action">
+                            <span class="product-price">Rp 15.000</span>
+                            <div class="qty-selector">
+                                <button class="qty-btn btn-minus">&minus;</button>
+                                <input type="text" class="qty-input" value="1" readonly>
+                                <button class="qty-btn btn-plus">&plus;</button>
+                            </div>
+                            <button class="btn-add-cart" data-name="French Fries Classic" data-price="15000" data-img="assets/img/wb side 2.jpg">Add</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="snacks">
+                    <div class="product-img-container">
+                        <img src="assets/img/wb slide 3.jpg" class="product-img" alt="Cireng Bumbu Rujak">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Cireng Bumbu Rujak</h3>
+                        <p class="product-desc">Fried tapioca flour crackers, crispy outside, chewy inside, served with hot spicy palm dipping.</p>
+                        <div class="product-price-action">
+                            <span class="product-price">Rp 12.000</span>
+                            <div class="qty-selector">
+                                <button class="qty-btn btn-minus">&minus;</button>
+                                <input type="text" class="qty-input" value="1" readonly>
+                                <button class="qty-btn btn-plus">&plus;</button>
+                            </div>
+                            <button class="btn-add-cart" data-name="Cireng Bumbu Rujak" data-price="12000" data-img="assets/img/wb slide 3.jpg">Add</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="snacks">
+                    <div class="product-img-container">
+                        <img src="assets/img/wb slide 1.jpg" class="product-img" alt="Roti Bakar Cokelat Keju">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Roti Bakar Cokelat Keju</h3>
+                        <p class="product-desc">Grilled thick toast loaded with melted chocolate chips and shredded cheddar cheese.</p>
+                        <div class="product-price-action">
+                            <span class="product-price">Rp 18.000</span>
+                            <div class="qty-selector">
+                                <button class="qty-btn btn-minus">&minus;</button>
+                                <input type="text" class="qty-input" value="1" readonly>
+                                <button class="qty-btn btn-plus">&plus;</button>
+                            </div>
+                            <button class="btn-add-cart" data-name="Roti Bakar Cokelat Keju" data-price="18000" data-img="assets/img/wb slide 1.jpg">Add</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Warbloc House. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+    <script>
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                const cat = btn.getAttribute('data-category');
+                document.querySelectorAll('.product-card').forEach(card => {
+                    if (cat === 'all' || card.getAttribute('data-category') === cat) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        document.querySelectorAll('.qty-selector').forEach(sel => {
+            const minus = sel.querySelector('.btn-minus');
+            const plus = sel.querySelector('.btn-plus');
+            const input = sel.querySelector('.qty-input');
+
+            minus.addEventListener('click', () => {
+                let v = parseInt(input.value) || 1;
+                if (v > 1) {
+                    input.value = v - 1;
+                }
+            });
+
+            plus.addEventListener('click', () => {
+                let v = parseInt(input.value) || 1;
+                input.value = v + 1;
+            });
+        });
+
+        document.querySelectorAll('.btn-add-cart').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const name = btn.getAttribute('data-name');
+                const price = parseInt(btn.getAttribute('data-price')) || 0;
+                const img = btn.getAttribute('data-img');
+                const qtyInput = btn.closest('.product-price-action').querySelector('.qty-input');
+                const qty = parseInt(qtyInput.value) || 1;
+
+                let cartStr = localStorage.getItem('wb_cart');
+                let cart = [];
+                try {
+                    if (cartStr) cart = JSON.parse(cartStr);
+                } catch(e) {}
+
+                let existing = cart.find(item => item.name === name);
+                if (existing) {
+                    existing.quantity += qty;
+                } else {
+                    cart.push({ name, price, img, quantity: qty });
+                }
+
+                localStorage.setItem('wb_cart', JSON.stringify(cart));
+                updateCartBadge();
+
+                qtyInput.value = 1;
+
+                const alertBox = document.getElementById('product-alert');
+                const alertMsg = document.getElementById('product-alert-msg');
+                alertMsg.textContent = `${name} (${qty}) added to cart!`;
+                alertBox.style.display = 'flex';
+                
+                setTimeout(() => {
+                    alertBox.style.display = 'none';
+                }, 3000);
+            });
+        });
+    </script>
+</body>
+</html>

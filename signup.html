@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Warbloc House</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css?v=1.1">
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="assets/img/logo-warbloc.png" alt="Logo Warbloc House" class="logo-icon">
+                <div class="logo-text">Warbloc <span>House</span></div>
+            </a>
+
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="product.html">Product</a></li>
+                    <li><a href="location.html">Location</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-buttons" id="auth-buttons">
+                <a href="signin.html" class="btn btn-secondary">Sign In</a>
+                <a href="order.html" class="btn btn-primary">Order Online</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="page-wrapper">
+        <div class="container">
+            <div class="form-card">
+                <h1 class="form-title">Create <span>Account</span></h1>
+                
+                <div id="signup-alert-error" class="alert alert-error">
+                    <i class="fa-solid fa-circle-xmark"></i>
+                    <span id="signup-error-msg">Passwords do not match!</span>
+                </div>
+
+                <form id="signup-form">
+                    <div class="form-group">
+                        <label class="form-label" for="signup-name">Full Name</label>
+                        <input type="text" id="signup-name" class="form-input" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="signup-email">Email Address</label>
+                        <input type="email" id="signup-email" class="form-input" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="signup-password">Password</label>
+                        <input type="password" id="signup-password" class="form-input" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="signup-confirm">Confirm Password</label>
+                        <input type="password" id="signup-confirm" class="form-input" required>
+                    </div>
+
+                    <div class="form-options" style="justify-content: flex-start;">
+                        <label class="form-checkbox">
+                            <input type="checkbox" id="signup-terms" required>
+                            <span>I agree to the Terms & Conditions</span>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn-form" id="btn-submit-signup">
+                        <span>Sign Up</span>
+                    </button>
+                </form>
+
+                <div class="form-footer">
+                    Already have an account? <a href="signin.html" class="form-link">Sign In</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Warbloc House. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+    <script>
+        const form = document.getElementById('signup-form');
+        const alertError = document.getElementById('signup-alert-error');
+        const errorMsg = document.getElementById('signup-error-msg');
+        const btnSubmit = document.getElementById('btn-submit-signup');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alertError.style.display = 'none';
+
+            const name = document.getElementById('signup-name').value.trim();
+            const email = document.getElementById('signup-email').value.trim();
+            const password = document.getElementById('signup-password').value;
+            const confirm = document.getElementById('signup-confirm').value;
+            const terms = document.getElementById('signup-terms').checked;
+
+            if (password !== confirm) {
+                errorMsg.textContent = 'Passwords do not match!';
+                alertError.style.display = 'flex';
+                return;
+            }
+
+            if (!terms) {
+                errorMsg.textContent = 'You must agree to the Terms & Conditions!';
+                alertError.style.display = 'flex';
+                return;
+            }
+
+            btnSubmit.disabled = true;
+            btnSubmit.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> <span>Creating Account...</span>';
+
+            setTimeout(() => {
+                localStorage.setItem('wb_registered_name', name);
+                localStorage.setItem('wb_registered_email', email);
+                localStorage.setItem('wb_registered_password', password);
+                
+                window.location.href = 'signin.html?signup_success=true';
+            }, 1500);
+        });
+    </script>
+</body>
+</html>
