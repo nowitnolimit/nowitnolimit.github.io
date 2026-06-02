@@ -1,0 +1,212 @@
+@font-face {
+    font-family: 'Chicalo';
+    src: url('Chicalo.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: #000000; /* Hitam pekat murni */
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+.contact-container {
+    width: 100%;
+    max-width: 900px;
+}
+
+/* Header */
+.contact-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.contact-header h2 {
+    font-family: 'Chicalo', sans-serif;
+    font-size: 42px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #ffffff;
+    margin-bottom: 12px;
+}
+
+.contact-header p {
+    color: #666666;
+    font-size: 14px;
+    max-width: 500px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Main Layout Grid */
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 50px;
+}
+
+/* Bagian Info (Kiri) */
+.contact-info h3 {
+    font-family: 'Chicalo', sans-serif;
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #b60000; /* Merah pekat khas Warbloc */
+    margin-bottom: 25px;
+    letter-spacing: 0.5px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.info-item .icon {
+    font-size: 20px;
+}
+
+.info-item p {
+    color: #aaaaaa;
+    font-size: 14px;
+}
+
+/* Tombol Sosial Media */
+.social-medias {
+    display: flex;
+    gap: 15px;
+    margin-top: 35px;
+}
+
+.social-link {
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.social-link.instagram {
+    border: 2px solid #00df81; /* Aksen hijau neon */
+    color: #ffffff;
+}
+
+.social-link.instagram:hover {
+    background: #00df81;
+    color: #000000;
+    box-shadow: 0 0 15px rgba(0, 223, 129, 0.4);
+}
+
+.social-link.whatsapp {
+    border: 2px solid #ffffff;
+    color: #ffffff;
+}
+
+.social-link.whatsapp:hover {
+    background: #ffffff;
+    color: #000000;
+}
+
+/* Bagian Form (Kanan) */
+.contact-form .input-group {
+    margin-bottom: 20px;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 8px;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 14px 16px;
+    background: #111111; /* Box input abu-abu sangat gelap */
+    border: 2px solid #222222;
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+/* Khusus text input dibuat bulat ujungnya agar serasi dengan form login kemarin */
+.contact-form input {
+    border-radius: 30px; 
+}
+
+.contact-form input:focus, .contact-form textarea:focus {
+    border-color: #00df81; /* Menyala hijau pas diketik */
+    box-shadow: 0 0 10px rgba(0, 223, 129, 0.2);
+}
+
+/* Tombol Kirim Pesan (Merah Solid) */
+.btn-send {
+    width: 100%;
+    padding: 14px;
+    background: #b60000; /* Merah solid */
+    color: #ffffff;
+    border: none;
+    border-radius: 30px;
+    font-family: 'Chicalo', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(182, 0, 0, 0.3);
+    transition: all 0.2s ease;
+    margin-top: 10px;
+}
+
+.btn-send:hover {
+    background: #e60000;
+    box-shadow: 0 6px 20px rgba(230, 0, 0, 0.5);
+    transform: translateY(-1px);
+}
+
+/* Footer / Link Balik */
+.contact-footer {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.contact-footer a {
+    color: #666666;
+    text-decoration: none;
+    font-size: 13px;
+    transition: color 0.2s ease;
+}
+
+.contact-footer a:hover {
+    color: #ffffff;
+}
+
+/* Responsive Desain untuk HP */
+@media (max-width: 768px) {
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .contact-header h2 {
+        font-size: 32px;
+    }
+}

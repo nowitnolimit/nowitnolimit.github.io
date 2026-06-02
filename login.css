@@ -1,0 +1,207 @@
+@font-face {
+    font-family: 'Chicalo';
+    src: url('Chicalo.ttf') format('truetype'); /* Sesuaikan ekstensi filenya (.ttf/.woff) */
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: #000000; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+.login-container {
+    background: #000000; 
+    padding: 70px 40px 40px 40px;
+    border-radius: 12px;
+    border: 2px solid #111111; /* Border tipis gelap */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8);
+    width: 100%;
+    max-width: 400px;
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.login-header h2 {
+    font-family: 'Chicalo', 'Segoe UI', sans-serif;
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 800;
+    text-transform: uppercase; 
+    letter-spacing: 1px;
+    line-height: 1.4;
+    margin-top: 10px;
+    transform: translateY(25px);
+    margin-bottom: 35px;
+}
+
+.login-header p {
+    color: #666666;
+    font-size: 13px;
+}
+
+.input-group {
+    margin-bottom: 22px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #ffffff; 
+    font-weight: 600;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 14px 16px;
+    background: #111111; 
+    border: 2px solid #222222;
+    border-radius: 30px; 
+    color: #ffffff;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+
+.input-group input:focus {
+    border-color: #00df81; 
+    box-shadow: 0 0 10px rgba(0, 223, 129, 0.2);
+}
+
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    margin-bottom: 28px;
+    color: #888888;
+}
+
+.form-options input[type="checkbox"] {
+    accent-color: #00df81; 
+    cursor: pointer;
+}
+
+.form-options a, .login-footer a {
+    color: #00df81; 
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.form-options a:hover, .login-footer a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+
+.btn-login {
+    width: 100%;
+    padding: 14px;
+    background: #b60000; 
+    color: #ffffff;
+    border: none;
+    border-radius: 30px; 
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(182, 0, 0, 0.3);
+    transition: all 0.2s ease;
+}
+
+
+.btn-login:hover {
+    background: #e60000; 
+    box-shadow: 0 6px 20px rgba(230, 0, 0, 0.5);
+    transform: translateY(-1px);
+}
+
+
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 25px 0;
+    color: #444444;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.divider::before, .divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 2px solid #151515;
+}
+
+.divider:not(:empty)::before {
+    margin-right: 1em;
+}
+
+.divider:not(:empty)::after {
+    margin-left: 1em;
+}
+
+
+.btn-google {
+    width: 100%;
+    padding: 12px;
+    background: #000000; 
+    color: #ffffff;
+    border: 2px solid #00df81; 
+    border-radius: 30px; 
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+
+.btn-google:hover {
+    background: #00df81;
+    color: #000000;
+    box-shadow: 0 0 15px rgba(0, 223, 129, 0.4);
+}
+
+.btn-google:hover svg {
+    filter: brightness(0);
+}
+
+.btn-google svg {
+    width: 18px;
+    height: 18px;
+    transition: all 0.2s ease;
+}
+
+
+.login-footer {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 13px;
+    color: #666666;
+}

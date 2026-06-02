@@ -1,0 +1,113 @@
+@font-face {
+    font-family: 'Chicalo';
+    src: url('Chicalo.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: #000000; /* Hitam pekat khas Warbloc */
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+.order-container {
+    text-align: center;
+    max-width: 500px;
+    padding: 40px;
+    border: 2px solid #111111;
+    border-radius: 16px;
+    background: #000000;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+}
+
+.order-icon {
+    font-size: 50px;
+    margin-bottom: 20px;
+    animation: pulse 2s infinite; /* Efek kedip tipis biar estetik */
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 0.8; }
+    50% { transform: scale(1.05); opacity: 1; }
+    100% { transform: scale(1); opacity: 0.8; }
+}
+
+h2 {
+    font-family: 'Chicalo', sans-serif;
+    font-size: 38px;
+    color: #b60000; /* Merah pekat ikonik lu */
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.main-msg {
+    font-size: 18px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.sub-msg {
+    font-size: 14px;
+    color: #666666;
+    margin-bottom: 35px;
+    line-height: 1.5;
+}
+
+/* Grouping Tombol Kapsul Bulat */
+.order-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.order-buttons a {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    border-radius: 30px; /* Bentuk kapsul oval pas sama beranda lu */
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    transition: all 0.2s ease;
+}
+
+/* Tombol IG - Hijau Neon Sign In Lu */
+.btn-ig {
+    background: transparent;
+    border: 2px solid #00df81;
+    color: #00df81;
+}
+
+.btn-ig:hover {
+    background: #00df81;
+    color: #000000;
+    box-shadow: 0 0 15px rgba(0, 223, 129, 0.4);
+}
+
+/* Tombol Kembali - Putih Minimalis */
+.btn-back {
+    background: transparent;
+    border: 2px solid #222222;
+    color: #888888;
+}
+
+.btn-back:hover {
+    border-color: #ffffff;
+    color: #ffffff;
+}
